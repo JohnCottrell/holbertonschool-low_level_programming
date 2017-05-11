@@ -4,7 +4,6 @@
 
 /**
  * main - this function does something
- * @some_variable: this var doesn't exist
  * Return: zero under all circumstances
  **/
 

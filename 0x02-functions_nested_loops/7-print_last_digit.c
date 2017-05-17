@@ -5,13 +5,12 @@
  *
  * @n: print the last digit of a number
  *
- * Return: l.
+ * Return: the value of the last digit r
  */
 int print_last_digit(int n)
 {
 	int l;
 	int r;
-	int a;
 
 	if (n >= 0)
 	{
@@ -21,9 +20,9 @@ int print_last_digit(int n)
 	}
 	else
 	{
-		a = (0 - n) % 10;
-		_putchar(a + '0');
-		r = a;
+		l = (0 - n) % 10;
+		_putchar(l + '0');
+		r = l;
 	}
 	return (r);
 }

@@ -5,21 +5,24 @@
  *
  * @n: print the last digit of a number
  *
- * Return: The last digit of n.
+ * Return: l.
  */
 int print_last_digit(int n)
 {
 	int l;
+	int r;
 
 	if (n >= 0)
 	{
 		l = n % 10;
 		_putchar(l + '0');
+		r = l;
 	}
 	else if (n < 0)
 	{
 		l = (0 - n) % 10;
 		_putchar(l + '0');
+		r = l;
 	}
-	return (l);
+	return (r);
 }

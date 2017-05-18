@@ -11,7 +11,7 @@ int _isupper(int c)
 
 	if ((c > 64) && (c < 91))
 	{
-		result 1;
+		result = 1;
 	}
 
 	else

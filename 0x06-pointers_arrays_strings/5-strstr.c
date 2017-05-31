@@ -22,9 +22,12 @@ char *_strstr(char *haystack, char *needle)
 				if (offset < 0)
 					offset = j;
 				j++;
+				if (needle[i + 1] == '\0')
+					return (haystack + offset);
 				break;
 			}
 			offset = -1;
+			i = 0;
 		}
 		if (haystack[j] == '\0')
 			return (haystack + offset);

@@ -1,0 +1,37 @@
+#include "holberton.h"
+
+/**
+ * is_prime_number - returns 1 if input integer is prime, otherwise returns 0
+ * @n: number to be examined
+ * Return: int
+ */
+int is-divisible(int n);
+int is_prime_number(int n)
+{
+	if (n <= 1)
+	{
+		return (0);
+	}
+	else if (n <= 3)
+	{
+		return (1);
+	}
+	else if (n % 2 == 0 || n % 3 == 0)
+	{
+		return (0);
+	}
+	else if (n % 5 == 0 || n % 7 == 0)
+		return (0);
+	return (is-divisible(n, 11));
+}
+
+int is-divisible(int n, int div)
+{
+	// if div is less than n / 7
+	  // if remainder of n and div is 0, return 0
+	  //  return (is-divisible(n, div + 1));
+	// return 1
+	if (div < (n / 7))
+
+
+}

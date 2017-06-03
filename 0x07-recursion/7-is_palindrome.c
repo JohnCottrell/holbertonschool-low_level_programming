@@ -25,7 +25,6 @@ int _strlen_recursion(char *s)
 /**
  * is_palindrome - returns 1 if a string is a palindrome, or 0 if not
  * @s: string to be examined
- * @end: end of string
  * Return: int
  */
 int is_palindrome(char *s)

@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 	if (change < 0)
 	{
 		printf("0\n");
+		return (0);
 	}
 
 	quarter = 25;

@@ -1,8 +1,8 @@
 #ifndef _DOG_H_
 #define _DOG_H_
 
-/*
- * struct dog -  defines elements associated with dogs
+/**
+ * struct dog - defines elements associated with dogs
  * @name: the dog's name
  * @age: the age of the dog
  * @owner: the owner of the dog

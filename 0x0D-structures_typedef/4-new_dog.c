@@ -2,6 +2,42 @@
 #include "dog.h"
 
 /**
+ * _strlen - calculates length of string
+ * @str: string
+ * Return: length of str
+ */
+int _strlen(char *str)
+{
+	int len;
+
+	for (len = 0; str[len]; len++)
+		;
+	return (len);
+}
+
+/**
+ * _strcpy - copies string to new destination
+ * @str: string to be copied
+ * Return: copy of string
+ */
+char *_strcpy(char *str)
+{
+	int i;
+
+	char *dest;
+
+	dest = malloc((_strlen(str) + 1) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	for (i = 0; str[i]; i++)
+	{
+		dest[i] = str[i];
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
  * new_dog - creates a new dog
  * @name: name of dog
  * @age: age of dog
@@ -16,8 +52,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (dog != NULL)
 	{
-		dog->name = name;
-		dog->owner = owner;
+		dog->name = _strcpy(name);
+
+		dog->owner = _strcpy(owner);
 		dog->age = age;
 	}
 	return (dog);

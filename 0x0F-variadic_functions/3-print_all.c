@@ -17,6 +17,10 @@ void print_all(const char * const format, ...)
 	};
 	int i, j;
 
+	va_list ar;
+
+	va_start (ar, format)
+
 	i = 1;
 	while (format && format[i])
 	{
@@ -25,10 +29,11 @@ void print_all(const char * const format, ...)
 		{
 			if (ptypt[j] == format[i])
 			{
-				ptypt[j].f(ap);
+				ptypt[j].f(ar);
 			}
 			j++;
 		}
 		i++;
 	}
+	va_end(ar);
 }

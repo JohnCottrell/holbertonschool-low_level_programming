@@ -10,8 +10,8 @@
  */
 typedef struct ptyp
 {
-	char *ptyp;
-	void (*f)();
+	char ptype;
+	void (*f)(va_list);
 } ptyp_t;
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);

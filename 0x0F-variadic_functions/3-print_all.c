@@ -19,7 +19,16 @@ void print_c(va_list ar)
  */
 void print_s(va_list ar)
 {
-	printf("%s", va_arg(ar, char *));
+	char *str;
+
+	str = va_arg(ar, char *);
+
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
 }
 /**
  * print_i - prints an int
@@ -55,9 +64,13 @@ void print_all(const char * const format, ...)
 		{'f', print_f},
 		{'\0', NULL}
 	};
+
+	char *sep;
 	int i, j, count;
 
 	va_list ar;
+
+	sep = "";
 
 	va_start(ar, format);
 
@@ -69,10 +82,8 @@ void print_all(const char * const format, ...)
 		{
 			if (ptypt[j].ptype == format[i])
 			{
-				if (count > 0)
-				{
-					printf(", ");
-				}
+				printf("%s", sep);
+				sep = ", ";
 				ptypt[j].f(ar);
 				count++;
 			}

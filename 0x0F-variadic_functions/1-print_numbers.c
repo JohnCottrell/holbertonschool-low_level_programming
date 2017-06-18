@@ -24,7 +24,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		num = va_arg(argmts, int);
 		printf("%d", num);
-		if (i + 1 < n)
+		if ((i + 1) < n)
 		{
 			printf("%s", separator);
 		}

@@ -14,10 +14,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_list argmts;
 
-	num = 0;
-
 	if (separator == NULL)
 		return;
+
+	num = 0;
 
 	va_start(argmts, n);
 	for (i = 0; i < n; i++)

@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 /**
- * struct prnt - Struct prnt
- * @ptyp: print
+ * struct ptyp - struct for matching data type with print function
+ * @ptype: print
  * @f: associated function
  */
 typedef struct ptyp

@@ -4,6 +4,7 @@
  * print_numbers - prints numbers followed by a new line
  * @n: number of arguments
  * @separator: string separating numbers
+ * @...: numbers
  * Return: nothing
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -20,7 +21,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		num = va_arg(argmts, int);
 		printf("%d", num);
-		if (i + 1 < n)
+		if ((i + 1) < n && separator != NULL)
 		{
 			printf("%s", separator);
 		}

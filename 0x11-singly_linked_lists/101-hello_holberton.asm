@@ -1,16 +1,21 @@
-section .text
-	global _start  	;must be declared for linker (ld)
+	extern printf			; the C function to be called
 
-_start:			;tells linker entry point
-	mov edx,len	;message length
-	mov ecx,msg	;message to write
-	mov ebx,1	;file descriptor (stdout)
-	mov eax,4	;system call number (sys_write)
-	int 0x80	;call kernel
+	section .data			; Data section, initialized variables
+msg:	db "Hello, Holberton", 0	; C string needs 0
+fmt:	db "%s", 10, 0			; The printf format, "\n", '0'
 
-	mov eax,1	;system call number (sys_exit)
-	int 0x80	;call kernel
+	section .text			; Code section.
 
-section .data
-msg db 'Hello, Holberton', 0xa	;string to be printed
-len equ $ - msg		;length of the string
+	global main			; the standard gcc entry point
+main:					; the program label for the entry point
+	push	rbp			; set up stack frame, must be alligned
+
+	mov	rdi,fmt
+	mov	rsi,msg
+	mov	rax,0			; or can be xor rax,rax
+	call	printf			; Call C function
+
+	pop	rbp			; restore stack
+
+	mov	rax,0			; normal, no error, return value
+	ret				; return

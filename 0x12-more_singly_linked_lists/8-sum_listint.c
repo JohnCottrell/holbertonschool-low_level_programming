@@ -11,11 +11,11 @@ int sum_listint(listint_t *head)
 
 	int sum;
 
-	sum = head->n;
 	if (head == NULL)
 	{
 		return (0);
 	}
+	sum = 0;
 	h = head;
 	while (h->next != NULL)
 	{

@@ -22,7 +22,7 @@ unsigned int binary_to_uint(const char *b)
 		else if (b[i] == '1')
 			dec = (dec << 1) | 1;
 		else if (b[i] == '0')
-			dec <<= 1;
+			dec = dec << 1;
 	}
 	return (dec);
 }

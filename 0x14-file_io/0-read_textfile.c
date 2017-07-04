@@ -28,12 +28,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		bytes_read = read(fd, &buff, 1);
 		if (bytes_read == 0)
 			return (i);
-		else
-			if (write(1, &buff, 1) == -1)
-				return (0);
+		if (write(1, &buff, 1) != 1)
+			return (0);
 	}
 
-	close (fd);
+	close(fd);
 
 	return (i);
 }

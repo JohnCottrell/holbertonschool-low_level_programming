@@ -29,8 +29,11 @@ void cant_write(char *str)
  */
 void cant_close_fd(int fdv)
 {
-	if (fdv == -1 || fdv == 0)
+	if (fdv == -1)
+	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", fdv);
+		exit(100);
+	}
 }
 
 /**

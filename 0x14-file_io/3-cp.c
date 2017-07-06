@@ -29,7 +29,7 @@ void cant_write(char *str)
  */
 void cant_close_fd(int fdv)
 {
-	dprintf(STDERR_FILENO, "Can't close fd %d\n", fdv);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdv);
 	exit(100);
 }
 
@@ -74,3 +74,4 @@ int main(int argc, char **argv)
 		cant_close_fd(fdfrom);
 	return (0);
 }
+

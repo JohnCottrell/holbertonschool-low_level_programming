@@ -18,8 +18,8 @@ void cant_read(char *str)
  */
 void cant_write(char *str)
 {
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", str);
-		exit(99);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", str);
+	exit(99);
 }
 
 /**
@@ -29,11 +29,8 @@ void cant_write(char *str)
  */
 void cant_close_fd(int fdv)
 {
-	if (fdv == -1)
-	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fdv);
-		exit(100);
-	}
+	dprintf(STDERR_FILENO, "Can't close fd %d\n", fdv);
+	exit(100);
 }
 
 /**

@@ -1,3 +1,3 @@
 #!/bin/bash
 gcc -c -Wall -Werror -pedantic -Wextra -fPIC *.c
-gcc -shared -o liball.so *.o
+gcc -Wall -Werror -pedantic -Wextra -shared -o liball.so *.o
